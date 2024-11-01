@@ -1,0 +1,10 @@
+model_list:
+  - model_name: cohere-embed-english-v3
+    litellm_params:
+      model: bedrock/cohere.embed-english-v3
+      aws_access_key_id: os.environ/AWS_ACCESS_KEY
+      aws_secret_access_key: os.environ/AWS_SECRET_ACCESS_KEY
+      aws_region_name: os.environ/AWS_REGION_NAME
+
+general_settings: 
+  master_key: os.environ/LITELLM_KEY

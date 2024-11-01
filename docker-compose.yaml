@@ -1,0 +1,23 @@
+services:
+  litellm:
+    build:
+      context: litellm
+      dockerfile: Dockerfile
+    ports: 
+      - 4000:4000
+    env_file:
+      - .env
+    volumes:
+      - ./litellm/config.yaml:/app/config.yaml
+    command: --config /app/config.yaml --detailed_debug
+    
+  open_webui:
+    build:
+      context: open_webui
+      dockerfile: Dockerfile
+    ports:
+      - 3000:8080
+    env_file:
+      - .env
+    
+  
