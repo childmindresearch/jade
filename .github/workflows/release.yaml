@@ -39,8 +39,8 @@ jobs:
         uses: docker/build-push-action@v5.1.0
         with:
           platforms: linux/amd64,linux/arm64
-          context: open_webui
-          file: ./Dockerfile
+          context: ./open_webui
+          file: Dockerfile
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
@@ -76,8 +76,8 @@ jobs:
         uses: docker/build-push-action@v5.1.0
         with:
           platforms: linux/amd64,linux/arm64
-          context: litellm
-          file: ./Dockerfile
+          context: ./litellm
+          file: Dockerfile
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
